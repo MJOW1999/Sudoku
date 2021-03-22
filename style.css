@@ -143,3 +143,8 @@ p.incorrect{
 #number-container > p:hover{
   background-color: gray;
 }
+footer {
+  background-color: lightgray;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
