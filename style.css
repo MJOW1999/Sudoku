@@ -1,1 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Open+Sans&family=Poppins&family=Rhodium+Libre&family=Risque&family=Syne+Mono&display=swap');
+header{
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid red;
+}
+h1 {
+  font-size: 45pt;
+  font-family: "Poppins", sans-serif;
+}
