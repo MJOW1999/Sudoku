@@ -148,3 +148,10 @@ footer {
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
+#github-link{
+  color: blue;
+  text-decoration: none;
+}
+#github-link:hover{
+  color: red;
+}
