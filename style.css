@@ -86,3 +86,8 @@ p#timer, p#mistakes{
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+#game{
+  display: flex;
+  justify-content: center;
+  font-family: "Risque", sans-serif;
+}
