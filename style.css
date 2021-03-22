@@ -127,3 +127,6 @@ p.incorrect{
 .bottomBorder{
   border-bottom: 4px solid black;
 }
+.hidden{
+  display: none;
+}
