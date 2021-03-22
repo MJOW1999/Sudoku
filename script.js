@@ -74,6 +74,31 @@ function startGame(){
   id("number-container").classList.remove("hidden");
 }
 
+function startTimer(){
+  //Sets time remaining based on input
+  if (id("time-1").checked) timeRemaining = 300; // 5 Minute game
+  else if (id("time-2").checked) timeRemaining = 600; // 10 Minute game
+  else if(id("time-3").checked) timeRemaining = 1200; // 20 Minute game
+  else timeRemaining = 1800; // 30 Minute game
+  //Sets timer for first second
+  id("timer").textContent = timeConversion(timeRemaining);
+  //Update timer every second
+  timer = setInterval(function() {
+    timeRemaining --;
+    // If no time remaining end the game
+    if (timeRemaining === 0) endGame();
+    id("timer").textContent = timeConversion(timeRemaining);
+  }, 1000)
+}
+//Converts seconds into string of MM:SS format
+function timeConversion(time) {
+  let minutes = Math.floor(time/60);
+  if(minutes < 10) minutes = "0" + minutes;
+  let seconds = time % 60;
+  if(seconds < 10) seconds = "0" + seconds;
+  return minutes + ":" + seconds;
+}
+
 //Helper Functions
 function id(id){
   return document.getElementById(id);
