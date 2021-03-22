@@ -49,3 +49,7 @@ li{
   display: flex;
   align-items: center;
 }
+#level, #time, #theme{
+  font-family: "Syne Mono";
+  font-size: 17px;
+}
