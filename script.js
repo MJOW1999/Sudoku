@@ -22,3 +22,30 @@ var mistakes;
 var selectedNum;
 var selectedTile;
 var disableSelect;
+
+window.onload = function(){
+	id("start-btn").addEventListener("click", startGame);
+	//Add event listener to each number and number container
+	for(let i = 0; i < id("number-container").children.length; i++){
+		id("number-container").children[i].addEventListener("click", function() {
+			//If selecting is not selected is not disabled
+			if(!disableSelect){
+				//If number is already selected
+				if(this.classList.contains("selected")){
+					//Then remove selection
+					this.classList.remove("selected");
+					selectedNum = null;
+				} else {
+					//Deselect all other numbers
+					for(let i = 0; i < 9; i++) {
+						id("number-container").children[i].classList.remove("selected");
+					}
+					//Select it and update the selectedNum variable
+					this.classList.add("selected");
+					selectedNum = this;
+					updateMove();
+				}
+			}
+		})
+	} 
+}
