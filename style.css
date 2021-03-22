@@ -38,3 +38,14 @@ li{
 #tip-2{
 	list-style-type: "\2B50"
 }
+#setup-game{
+  display: flex;
+  justify-content: center;
+}
+#setup-game > * {
+  margin-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+}
