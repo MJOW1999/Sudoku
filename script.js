@@ -14,3 +14,11 @@ const hard = [
 const expert = [
   "----3------1-7694--8-9------4---1----28-9----------16-7--8-----------4-2-9--1-3--",
   "469138275351276948287945631946751823128693754573482169734829516815367492692514387"];
+
+//Create key variables
+var timer;
+var timeRemaining;
+var mistakes;
+var selectedNum;
+var selectedTile;
+var disableSelect;
