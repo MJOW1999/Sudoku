@@ -209,6 +209,19 @@ function checkDone(){
   }
   return true;
 }
+
+function endGame(){
+  //Disable moves and stop the timer
+  disableSelect = true;
+  clearTimeout(timer);
+  //Display win or loss message;
+  if(mistakes === 3 || timeRemaining === 0) {
+    id("mistakes").textContent = "You lost! Unlucky!";
+  } else {
+    id("mistakes").textConent = "You won!";
+  }
+}
+
 //Helper Functions
 function id(id){
   return document.getElementById(id);
