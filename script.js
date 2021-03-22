@@ -73,3 +73,18 @@ function startGame(){
   //Show number container
   id("number-container").classList.remove("hidden");
 }
+
+//Helper Functions
+function id(id){
+  return document.getElementById(id);
+}
+
+
+function qs(selector) {
+  return document.querySelector(selector);
+}
+
+
+function qsa(selector) {
+  return document.querySelectorAll(selector);
+}
