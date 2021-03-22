@@ -49,3 +49,27 @@ window.onload = function(){
 		})
 	} 
 }
+function startGame(){
+  //Choose difficulty
+  let board;
+  if(id("diff-1").checked) board = easy[0];
+  else if(id("diff-2").checked) board = medium[0];
+  else if(id("diff-3").checked) board = hard[0];
+  else board = expert[0];
+  //Set lives to 3
+  mistakes = 0;
+  disableSelect = false;
+  id("mistakes").textContent = "Mistakes: 0/3";
+  //Creates board
+  generateBoard(board);
+  //Start the timer
+  startTimer();
+  //Set Theme
+  if(id("theme-1").checked){
+    qs("body").classList.remove("dark");
+  } else {
+    qs("body").classList.add("dark");
+  }
+  //Show number container
+  id("number-container").classList.remove("hidden");
+}
