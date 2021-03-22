@@ -234,6 +234,23 @@ function checkCorrect(tile){
   else return false;
 }
 
+function clearPrevious() {
+  //Access all of the tiles
+  let tiles = qsa(".tile");
+  //Remove each tile
+  for(let i = 0; i < tiles.length; i++) {
+    tiles[i].remove();
+  }
+  //Clear the timer
+  if(timer) clearTimeout(timer);
+  //Deselect numbers
+  for(let i = 0; i < id("number-container").children.length; i++){
+    id("number-container").children[i].classList.remove("selected");
+  }
+  //Clear selected variables
+  selectedTile = null;
+  selectedNum = null;
+}
 //Helper Functions
 function id(id){
   return document.getElementById(id);
