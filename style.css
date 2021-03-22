@@ -8,3 +8,33 @@ h1 {
   font-size: 45pt;
   font-family: "Poppins", sans-serif;
 }
+h2{
+  font-family: "Poppins", sans-serif;
+}
+ul{
+  text-align: center;
+  list-style-position: inside;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+li{
+  text-align: center;
+  list-style-type: none;
+}
+#step-1{
+  list-style-type: "\1F4A1";
+}
+#step-2{
+  list-style-type: "\274C";
+}
+#step-3{
+  list-style-type: "\26D4";
+}
+#step-4{
+  list-style-type: "\231B";
+}
+#tip-1{
+  list-style-type: "\2705";
+}
+#tip-2{
+	list-style-type: "\2B50"
+}
