@@ -99,6 +99,58 @@ function timeConversion(time) {
   return minutes + ":" + seconds;
 }
 
+function generateBoard(board) {
+  //Clear previous board
+  clearPrevious();
+  //Let used to increment tile ids
+  let idCount = 0;
+  //Create 81 tiles
+  for(let i = 0; i < 81; i++){
+    //Create a new paragraph element
+    let tile = document.createElement("p");
+    //If tile is not supposed to be blank
+    if(board.charAt(i) != "-"){
+      //Set tile text to correct number
+      tile.textContent = board.charAt(i);
+    } else {
+      //Add click event listener to tile
+      tile.addEventListener("click", function() {
+        //If selecting is not disabled
+        if(!disableSelect) {
+          //If the tile is already selected
+          if(tile.classList.contains("selected")) {
+            //Then remove selection
+            tile.classList.remove("selected");
+            selectedTile = null;
+          } else {
+            //Deselect all other tiles
+            for (let i = 0; i < 81; i++) {
+              qsa(".tile")[i].classList.remove("selected");
+            }
+            // Add selection and update variable
+            tile.classList.add("selected");
+            selectedTile = tile;
+            updateMove();
+          }
+        }
+      });                       
+    }
+    //Assign tile id
+    tile.id = idCount;
+    //Increment for next tile
+    idCount++;
+    //Add tile class to all tiles
+    tile.classList.add("tile");
+    if((tile.id > 17 && tile.id < 27) || (tile.id > 44 & tile.id < 54)) {
+      tile.classList.add("bottomBorder");
+    }
+    if((tile.id + 1) % 9 == 3 || (tile.id + 1) % 9 == 6){
+      tile.classList.add("rightBorder");
+    }
+    //Add tile to baord
+    id("board").appendChild(tile);
+  }
+}
 //Helper Functions
 function id(id){
   return document.getElementById(id);
