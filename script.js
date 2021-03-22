@@ -151,6 +151,56 @@ function generateBoard(board) {
     id("board").appendChild(tile);
   }
 }
+
+function updateMove(){
+  // If a tile and a number is selected
+  if(selectedTile && selectedNum){
+    //Set the tile to the correct number
+    selectedTile.textContent = selectedNum.textContent;
+    // If the number matches the corresponding number in the solutions key
+    if(checkCorrect(selectedTile)) {
+      //Deselect the tile
+      selectedTile.classList.remove("selected");
+      selectedNum.classList.remove("selected");
+      //Clear the selected variables
+      selectedNum = null;
+      selectedTile = null;
+      //Check if board is completed
+      if (checkDone()) {
+        endGame();
+      }
+      // If the number does not match the solution key
+    } else {
+      //Disable selecting new numbers for one second
+      disableSelect = true;
+      //Make the tile turn red
+      selectedTile.classList.add("incorrect");
+      //Run in one second
+      setTimeout(function() {
+        //Subtract lives by one
+        mistakes++;
+        //If no mistakes remaining end game
+        if(mistakes === 3) {
+          endGame();
+        } else {
+          //If mistkaes is not equal to zero
+          //Update mistakes text
+          id("mistakes").textContent = "Mistakes: " + mistakes + "/3";
+          //Renable selecting numbers and tiles
+          disableSelect = false;
+        }
+        // Restore tile colour and remove selected from both
+        selectedTile.classList.remove("incorrect");
+        selectedTile.classList.remove("selected");
+        selectedNum.classList.remove("selected");
+        //Clear the tiles text and clear seleceted variables
+        selectedTile.textContent = "";
+        selectedTile = null;
+        selectedNum = null;
+      }, 1000);
+    }
+  }
+}
 //Helper Functions
 function id(id){
   return document.getElementById(id);
