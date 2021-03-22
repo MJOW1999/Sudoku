@@ -66,3 +66,14 @@ button{
 body{
   background-color: antiquewhite;
 }
+body.dark{
+  background-color: #333333;
+  color: silver;
+}
+body.dark #mistakes{
+  color: crimson;
+}
+body.dark > footer{
+  color: black;
+  background-color: silver;
+}
