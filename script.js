@@ -222,6 +222,18 @@ function endGame(){
   }
 }
 
+function checkCorrect(tile){
+  //Set solution based on difficulty selection
+  let solution;
+  if (id("diff-1").checked) solution = easy[1];
+  else if (id("diff-2").checked) solution = medium[1];
+  else if (id("diff-3").checked) solution = hard[1];
+  else solution = expert[1];
+  // If tile's number is equal to solution's number
+  if(solution.charAt(tile.id) === tile.textContent) return true;
+  else return false;
+}
+
 //Helper Functions
 function id(id){
   return document.getElementById(id);
